@@ -1,2 +1,2 @@
 # data-generator
-my super data generator with thrends
+my super data generator with trends
