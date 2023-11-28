@@ -1,0 +1,38 @@
+{
+  "properties": {
+    "@timestamp": {
+      "type": "date"
+    },
+    "cpu_current_cycle": {
+      "type": "long"
+    },
+    "cpu_max_cycle": {
+      "type": "long"
+    },
+    "flag": {
+      "type": "keyword"
+    },
+    "mac_address": {
+      "type": "keyword"
+    },
+    "ram_usage": {
+      "type": "long"
+    },
+    "rx_bytes": {
+      "type": "long"
+    },
+    "rx_packets": {
+      "type": "long"
+    },
+    "timestamp": {
+      "type": "date",
+      "format": "yyyy-MM-dd HH:mm:ss"
+    },
+    "tx_bytes": {
+      "type": "long"
+    },
+    "tx_packets": {
+      "type": "long"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "description": "Ingest pipeline created by text structure finder",
+  "processors": [
+    {
+      "csv": {
+        "field": "message",
+        "target_fields": [
+          "timestamp",
+          "mac_address",
+          "cpu_max_cycle",
+          "cpu_current_cycle",
+          "ram_usage",
+          "rx_packets",
+          "rx_bytes",
+          "tx_packets",
+          "tx_bytes",
+          "flag"
+        ],
+        "ignore_missing": false
+      }
+    },
+    {
+      "date": {
+        "field": "timestamp",
+        "timezone": "{{ event.timezone }}",
+        "formats": [
+          "yyyy-MM-dd HH:mm:ss"
+        ]
+      }
+    },
+    {
+      "convert": {
+        "field": "cpu_current_cycle",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "cpu_max_cycle",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "ram_usage",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "rx_bytes",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "rx_packets",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "tx_bytes",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "convert": {
+        "field": "tx_packets",
+        "type": "long",
+        "ignore_missing": true
+      }
+    },
+    {
+      "remove": {
+        "field": "message"
+      }
+    }
+  ]
+}
